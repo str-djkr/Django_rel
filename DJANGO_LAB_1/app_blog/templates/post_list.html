@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="post-list">
+    <h1 class="page-title">Список постів</h1>
+    <ul class="post-items">
+        {% for post in posts %}
+        <li class="post">
+            <h2 class="post-title"><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
+            <p class="post-content">{{ post.content }}</p>
+        </li>
+        {% empty %}
+        <p class="no-posts">На жаль, поки немає жодних постів.</p>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+
+<!-- Підключення Bootstrap -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">

@@ -1,0 +1,37 @@
+<style>
+    .post-list {
+        margin-top: 20px;
+    }
+
+    .page-title {
+        color: #333;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .post-items {
+        list-style: none;
+        padding: 0;
+    }
+
+    .post {
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .post-title {
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+
+    .post-content {
+        color: #666;
+    }
+
+    .no-posts {
+        color: #900;
+        font-style: italic;
+    }
+</style>

@@ -1,0 +1,40 @@
+<!-- templates/your_app/post_detail.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="post-detail">
+    <h1 class="page-title">{{ post.title }}</h1>
+
+    <!-- Відображення фотографії, якщо вона є -->
+    {% if post.image %}
+        <img src="{{ post.image.url }}" alt="{{ post.title }}">
+    {% endif %}
+
+    <p class="post-content">{{ post.content }}</p>
+
+    <!-- Виведення коментарів -->
+    <h2>Коментарі:</h2>
+    <ul>
+        {% for comment in post.comments.all %}
+        <li>
+            <p><strong>{{ comment.author }}:</strong></p>
+            <p>{{ comment.text }}</p>
+            <p><em>Дата створення: {{ comment.created_date }}</em></p>
+        </li>
+        {% empty %}
+        <p>На жаль, немає коментарів.</p>
+        {% endfor %}
+    </ul>
+
+    <!-- Виведення тегів -->
+    <h2>Теги:</h2>
+    <ul>
+        {% for tag in post.tags.all %}
+        <li>{{ tag.name }}</li>
+        {% empty %}
+        <p>Немає тегів.</p>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
